@@ -1,13 +1,13 @@
 # Project memory — POC-s-DE
 
-Last updated: 2026-11-21 (branch `claude-setup`, uncommitted)
+Last updated: 2026-11-21 (branch `claude-setup`, committed; not pushed)
 
 ## Purpose
 Working repo for Anamika Singh's POCs: AI agents, RAG, data engineering, and client-style solution prototypes. It also serves as a portfolio for Senior Data Engineer, AI Engineer, AI Platform and Forward Deployed Engineer roles.
 
 ## Current state
 - Remote `origin` is https://github.com/singhanamika036/POC-s-DE, branch `main`. The only commit there is "Initial commit" with a README.
-- Guardrail setup (this branch, uncommitted):
+- Guardrail setup (committed on `claude-setup`):
   - `CLAUDE.md`: engineering guide
   - `.gitignore`: secrets, client data, outputs, Python caches
   - `.claude/settings.json`: deny rules that block commit, push, reset, merge, rebase, checkout, restore, tag, `gh pr` create/merge, `gh repo`, `rm -rf`, and reads or edits of `.env*`, `*.pem` and `*.key`
@@ -28,7 +28,7 @@ Working repo for Anamika Singh's POCs: AI agents, RAG, data engineering, and cli
 
 ## Open items
 - **Workspace not trusted.** Claude Code ignores `permissions.allow` in `.claude/settings.json` until the owner accepts the trust dialog in this folder. Deny rules still apply. Re-test allow and deny after trusting.
-- Branch `claude-setup` is uncommitted. Commit only on explicit approval.
+- Branch `claude-setup` is committed locally and **not pushed**. Push only on explicit approval.
 - POC status: `pocs/data-quality-checks` is built and tested (26 tests; clean run exit 0; defect run exit 1 with the 6 expected fails). See `docs/VALIDATION.md`.
 - Owner has not yet confirmed the repo's visibility (public or private). Memory and RCA files would be public if it is public.
 - Owner has not yet confirmed which connectors to set up. None are configured.

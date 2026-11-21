@@ -2,7 +2,7 @@
 
 - **Date:** 2026-11-21
 - **Branch:** `claude-setup` (created from `main` at `ceb1fcf`)
-- **Commits:** none. Nothing is staged or pushed. Commit and push need your explicit approval.
+- **Commits:** 5, on `claude-setup`, listed in §12. **Not pushed.** Push needs your explicit approval.
 
 ## 1. Summary
 
@@ -13,7 +13,7 @@ This build implements the approved plan from the earlier assessment:
 
 Two things are not finished, and both need your action:
 1. **Trust the workspace.** Claude Code ignores the project's allow list until you accept the trust dialog for this folder. I can't accept it for you, and changing `~/.claude.json` needs your approval.
-2. **Commit approval.** Everything is uncommitted on `claude-setup`.
+2. **Push approval.** The commits are local on `claude-setup`. Nothing has been pushed to GitHub.
 
 ## 2. Decisions I made where your answers were not yet given
 
@@ -22,7 +22,7 @@ Some questions from the assessment had no answer, so I used these defaults. Plea
 | Question | Default I used | Why |
 |---|---|---|
 | Skill location | Project-level (`.claude/skills/`) | Recommended. Versioned with the repo. |
-| Commit approval | No commits | Your approval covers building. Commit rules require an explicit instruction. |
+| Commit approval | No commits until approved | Approved later for the first few commits. Push still needs separate approval. |
 | Tool installs (gh, gitleaks, Docker, promptfoo) | Not installed | Installing system tools needs approval. Everything runs in a repo-local uv environment. |
 | Connectors | None configured | Not yet chosen. |
 | "New topic" | Data-quality POC on synthetic data | Your message didn't name a topic. This fits your data-engineering focus. Change it if you meant something else. |
@@ -115,7 +115,7 @@ Full detail is in `docs/VALIDATION.md`.
 
 ## 9. Git change summary
 
-Untracked, uncommitted, on `claude-setup`:
+Committed on `claude-setup` (see §12). Original file list:
 
 ```
 .claude/settings.json
@@ -135,7 +135,7 @@ Ignored and not committed: `.venv/`, `output/`, caches, `.DS_Store`.
 
 1. **Trust the workspace:** run `claude` in `~/Documents/POC-s-DE` once and accept the trust dialog. Then the allow list takes effect, and I'll re-run the deny and allow checks.
 2. **Review the diff** and approve or request changes.
-3. **Approve a commit** (and a push, if you want it on GitHub). I'll commit only after that approval.
+3. **Approve a push** if you want the branch on GitHub. Nothing has been pushed yet.
 4. **Confirm the defaults** in §2, especially the "new topic" and the skill location.
 5. **Tell me the repo's visibility** (public or private).
 6. **Decide on tool installs:** gh, gitleaks, promptfoo, Docker.
@@ -146,3 +146,13 @@ Ignored and not committed: `.venv/`, `output/`, caches, `.DS_Store`.
 - Add gitleaks as a pre-commit check.
 - Run the skill-creator evaluation on the six skills.
 - Extend the POC with an LLM step that explains the failed checks, using the JSON report as structured input, with schema validation and a prompt-injection test.
+
+## 12. Commit history (`claude-setup`, local only, not pushed)
+
+| Commit | Message | Contents |
+|---|---|---|
+| `58c3309` | chore: add Claude Code guardrails, gitignore and project permissions | `.gitignore`, `CLAUDE.md`, `.claude/settings.json` |
+| `7d52aa3` | docs: add project memory, technical decisions, lessons, RCA template and validation log | `memory/`, `docs/rca/`, `docs/VALIDATION.md`, `docs/SETUP_REPORT.md` |
+| `c574fe3` | feat(skills): add six project skills | `.claude/skills/*/SKILL.md` |
+| `8be3199` | feat(poc): data-quality checks on synthetic retail orders | `pocs/data-quality-checks/` |
+| (this commit) | docs: record commit history and mark work as committed, not pushed | `docs/SETUP_REPORT.md`, `docs/VALIDATION.md`, `memory/PROJECT_MEMORY.md` |

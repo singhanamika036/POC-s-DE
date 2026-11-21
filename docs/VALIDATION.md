@@ -69,7 +69,7 @@ Checked with `git check-ignore --no-index`:
 ## 6. Git state
 
 - Branch: `claude-setup`, created from `main` (`ceb1fcf`).
-- **No commits.** No staging. No push. No remote changes.
+- Five local commits on `claude-setup` (see `docs/SETUP_REPORT.md` §12). **No push.** No remote changes.
 - Untracked files are listed in `docs/SETUP_REPORT.md`.
 
 ## Summary of what is verified vs. not
