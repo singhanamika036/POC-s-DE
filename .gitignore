@@ -1,0 +1,55 @@
+# --- Secrets and credentials (never commit) ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*credentials*
+*accessKeys*
+*secret*
+*.token
+
+# --- Client and private data (never commit) ---
+data/
+clients/
+*.parquet
+*.xlsx
+*.csv
+!**/tests/fixtures/*.csv
+!pocs/**/sample_output/*.csv
+
+# --- Generated outputs and logs ---
+output/
+*.log
+logs/
+sample_output/*.tmp
+
+# --- Python ---
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.egg-info/
+build/
+dist/
+
+# --- dbt / Airflow ---
+target/
+dbt_packages/
+airflow.db
+airflow-webserver.pid
+standalone_admin_password.txt
+
+# --- Editors / OS ---
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# --- Claude Code local-only settings ---
+.claude/settings.local.json
